@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rk1103/Documents/mlflow-with-dvc/runs/0/a4906638876d467aaf51eb7a92e9c455/artifacts
+end_time: 1687387794718
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a4906638876d467aaf51eb7a92e9c455
+run_name: powerful-cow-823
+run_uuid: a4906638876d467aaf51eb7a92e9c455
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1687387786558
+status: 3
+tags: []
+user_id: rk1103

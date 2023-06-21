@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rk1103/Documents/mlflow-with-dvc/runs/0/e0f0cd587408442eb357f0b17cb14e8b/artifacts
+end_time: 1687387940323
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e0f0cd587408442eb357f0b17cb14e8b
+run_name: honorable-sheep-124
+run_uuid: e0f0cd587408442eb357f0b17cb14e8b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1687387933456
+status: 3
+tags: []
+user_id: rk1103
