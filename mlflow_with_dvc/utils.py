@@ -57,6 +57,3 @@ def list_all_tracked_files(dvc_only=True):
         tracked_list = fs.find(".", detail=False)
     logger.info(f"tracked files: {tracked_list}")
 
-
-create_bucket('dvc-storage-s3', region='us-east-1')
-list_existing_s3_buckets()
