@@ -60,5 +60,5 @@ You should see the server start
 [2023-06-22 00:05:44 +0100] [60928] [INFO] Booting worker with pid: 60928
 ```
 
-![](images/ui-table.png)
-![](images/ui-metrics-diff-runs.png)
+![](data/images/ui-table.png)
+![](data/images/ui-metrics-diff-runs.png)

@@ -1,0 +1,5 @@
+[core]
+    autostage = true
+    remote = myremote
+['remote "myremote"']
+    url = s3://dvc-storage-s3/mlflow-with-dvc
