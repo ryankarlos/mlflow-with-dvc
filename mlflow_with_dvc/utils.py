@@ -48,7 +48,7 @@ def list_existing_s3_buckets():
     logger.info(f'Existing buckets:\n {", ".join(buckets)}')
 
 
-def list_all_tracked_files(dvc_only:bool=True):
+def list_all_tracked_files(dvc_only=True):
     # opening a local repository
     fs = DVCFileSystem(DVC_DIR)
     if dvc_only:
