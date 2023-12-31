@@ -21,7 +21,7 @@ terminates with the following error message: mlflow.exceptions.MlflowException:
 in the code
 
 ```bash
-poetry run python -m mlflow_with_dvc.pipeline
+poetry run python -m sagemaker-new-reinvent.pipeline
 ```
 
 You should see the output as below
