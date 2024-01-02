@@ -1,16 +1,35 @@
 
 from sagemaker.workflow.pipeline import Pipeline
+from .steps import *
+import json
+
+from sagemaker.workflow.parameters import ParameterInteger, ParameterString, ParameterFloat
+
 
 
 def pipeline():
+    # raw input data
+    input_data = ParameterString(name="InputData", default_value=raw_s3)
 
-    # Create a Sagemaker Pipeline.
-    # Each parameter for the pipeline must be set as a parameter explicitly when the pipeline is created.
-    # Also pass in each of the steps created above.
-    # Note that the order of execution is determined from each step's dependencies on other steps,
-    # not on the order they are passed in below.
+    # status of newly trained model in registry
+    model_approval_status = ParameterString(name="ModelApprovalStatus", default_value="Approved")
+
+    # processing step parameters
+    processing_instance_type = ParameterString(
+        name="ProcessingInstanceType", default_value="ml.m5.xlarge"
+    )
+    processing_instance_count = ParameterInteger(name="ProcessingInstanceCount", default_value=1)
+
+    # training step parameters
+    training_instance_type = ParameterString(name="TrainingInstanceType", default_value="ml.m5.xlarge")
+    training_epochs = ParameterString(name="TrainingEpochs", default_value="100")
+
+    # model performance step parameters
+    accuracy_mse_threshold = ParameterFloat(name="AccuracyMseThreshold", default_value=0.75)
+
+
     pipeline = Pipeline(
-        name=pipeline_name,
+        name="pipeline_demo",
         parameters=[
             training_instance_type,
             processing_instance_type,
@@ -20,5 +39,13 @@ def pipeline():
             training_epochs,
             accuracy_mse_threshold,
         ],
-        steps=[step_process, step_train_model, step_evaluate_model, step_cond],
+        steps=[preprocess_step(), train_step(), evaluation_step(), model_package_step(), register_model_step()]
     )
+
+    return pipeline
+
+if __name__ == "__main__":
+    definition = json.loads(pipeline().definition())
+    pipeline.upsert(role_arn=role)
+    execution = pipeline.start()
+    execution.wait()
