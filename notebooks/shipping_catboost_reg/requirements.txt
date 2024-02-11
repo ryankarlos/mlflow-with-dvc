@@ -5,3 +5,4 @@ scikit-learn
 fsspec
 s3fs
 ipywidgets
+pickle
