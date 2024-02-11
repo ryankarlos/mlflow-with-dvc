@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "sm_examples", from="src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 boto3 = "^1.33.3"
 sagemaker = "^v2.202.1"
 scikit-learn = "^1.3.2"
